@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto — Pixel Marketing Studio</title>
+  <meta name="description" content="Contactanos por WhatsApp o dejanos tus datos. Te respondemos el mismo día con una primera mirada y próximos pasos para tu negocio.">
+  <meta name="theme-color" content="#0A0A0E">
+  <meta property="og:title" content="Contacto — Pixel Marketing Studio">
+  <meta property="og:description" content="Hablemos de tu próximo cliente. Contanos sobre tu negocio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span class="nav__logo-text">Pixel<span> Marketing Studio</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="casos.html">Casos</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </div>
+      <div class="nav__right">
+        <div class="nav__lang">
+          <span class="nav__lang-active">ES</span>
+          <span class="nav__lang-inactive" title="Em breve">PT</span>
+          <span class="nav__lang-inactive" title="Coming soon">EN</span>
+        </div>
+        <a href="#" data-wa-link class="btn btn--primary btn--sm" target="_blank">Hablemos</a>
+        <button class="nav__burger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile-menu">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="casos.html">Casos</a>
+      <a href="contacto.html" class="active">Contacto</a>
+      <a href="#" data-wa-link class="btn btn--primary" target="_blank">Hablemos</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <section>
+    <div class="container contact-grid">
+      <div class="blob blob--hero-a" style="top:-10px;left:10px;right:auto" aria-hidden="true"></div>
+      <div class="blob blob--hero-b" style="bottom:40px;right:20px;left:auto" aria-hidden="true"></div>
+
+      <!-- Left -->
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div>
+          <p class="section-label section-label--lg">Contacto</p>
+          <h1 class="heading-xl" style="text-wrap:pretty">Hablemos de tu <span class="text-accent">próximo cliente</span>.</h1>
+          <p class="text-muted" style="font-size:18px;line-height:1.6;margin:24px 0 0">Contanos sobre tu negocio y te respondemos el mismo día con una primera mirada y próximos pasos.</p>
+        </div>
+
+        <a href="#" data-wa-link class="contact-box contact-box--wa" target="_blank">
+          <span class="contact-wa-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.6.2-.8l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.5-1.4-.7-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.3-.4Z" fill="#0A0A0E"/></svg>
+          </span>
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span class="sora" style="font-weight:700;font-size:17px;color:#F4F4F6">WhatsApp</span>
+            <span class="text-muted" style="font-size:14px" data-wa-display>+54 9 11 7365-5126 · respuesta en el día</span>
+          </span>
+        </a>
+
+        <div class="contact-box">
+          <p class="sora" style="font-weight:700;font-size:15px;margin:0">¿Qué pasa después de escribirnos?</p>
+          <p class="text-muted" style="font-size:14px;line-height:1.7;margin:8px 0 0">1. Llamada de 20 minutos para conocer tu negocio.<br>2. Diagnóstico sin costo de tu presencia digital y pauta actual.<br>3. Propuesta con plan, presupuesto y resultados esperados.</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="form" id="contactForm">
+        <h2 class="sora" style="font-weight:700;font-size:24px;margin:0">Dejanos tus datos</h2>
+        <div class="form__group">
+          <label class="form__label" for="fieldNombre">Nombre</label>
+          <input id="fieldNombre" type="text" placeholder="Tu nombre" class="form__input">
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="fieldRubro">Rubro</label>
+          <select id="fieldRubro" class="form__select">
+            <option value="">Elegí tu rubro</option>
+            <option value="Medicina estética">Medicina estética</option>
+            <option value="Inmobiliaria">Inmobiliaria</option>
+            <option value="Concesionaria">Concesionaria</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="fieldMensaje">Mensaje</label>
+          <textarea id="fieldMensaje" rows="4" placeholder="Contanos brevemente tu situación y objetivo" class="form__textarea"></textarea>
+        </div>
+        <a href="#" id="contactSubmit" class="btn btn--primary" style="text-align:center">Enviar por WhatsApp →</a>
+        <p class="form__hint">Se abre WhatsApp con tu mensaje ya escrito.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-dot"></span>
+        <span class="footer__brand-name">Pixel Marketing Studio</span>
+      </div>
+      <div class="footer__links">
+        <a href="servicios.html">Servicios</a>
+        <a href="casos.html">Casos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <p class="footer__copy">© 2026 Pixel Marketing Studio</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
