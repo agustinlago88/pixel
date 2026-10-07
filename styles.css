@@ -11,6 +11,16 @@ a:hover{color:#D549F0}
 ::selection{background:#D549F0;color:#0A0A0E}
 img{max-width:100%;height:auto;display:block}
 
+/* ── Focus & skip link ────────────────────────────────── */
+:focus{outline:none}
+:focus-visible{outline:2px solid #D549F0;outline-offset:3px}
+.btn:focus-visible{outline-offset:4px}
+.skip-link{position:absolute;left:16px;top:-60px;z-index:200;background:#D549F0;color:#0A0A0E;font-weight:700;padding:10px 18px;border-radius:999px;transition:top .2s ease}
+.skip-link:hover,.skip-link:focus{color:#0A0A0E}
+.skip-link:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a.text-accent:hover{text-decoration:underline;text-underline-offset:4px}
+
 /* ── Animations ───────────────────────────────────────── */
 @keyframes pixelBlink{
   0%,100%{opacity:.12;transform:scale(.85)}
@@ -31,7 +41,7 @@ img{max-width:100%;height:auto;display:block}
 }
 @keyframes fadeOut{
   from{opacity:1}
-  to{opacity:0}
+  to{opacity:0;visibility:hidden;pointer-events:none}
 }
 
 /* ── Utility ──────────────────────────────────────────── */
@@ -43,7 +53,7 @@ img{max-width:100%;height:auto;display:block}
 .heading-md{font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(24px,3.5vw,40px);margin:0}
 .heading-sm{font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(20px,2.5vw,30px);margin:0}
 .text-muted{color:#9A9AA6}
-.text-dim{color:#5A5A66}
+.text-dim{color:#80808C}
 .text-accent{color:#D549F0}
 .sora{font-family:'Sora',sans-serif}
 
@@ -57,8 +67,11 @@ img{max-width:100%;height:auto;display:block}
 .blob--lema{width:min(480px,55vw);height:360px;top:60px;left:50%;margin-left:-240px;opacity:.32;animation:blobMorph 17s ease-in-out -2s infinite alternate}
 
 /* ── Splash Screen ────────────────────────────────────── */
-.splash{position:fixed;inset:0;background:#0A0A0E;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .6s ease}
+.splash{position:fixed;inset:0;background:#0A0A0E;z-index:100;display:none;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .6s ease}
 .splash.fade-out{opacity:0;pointer-events:none}
+/* Splash only on the first visit of the session (class set inline in <head>).
+   The CSS animation hides it on its own even if main.js never runs. */
+.show-splash .splash{display:flex;animation:fadeOut .6s ease 1.7s forwards}
 .splash__grid{display:grid;grid-template-columns:repeat(3,20px);gap:7px}
 .splash__pixel{width:20px;height:20px}
 .splash__text{display:flex;flex-direction:column;align-items:center;gap:6px;animation:splashText .7s ease .3s both}
@@ -70,7 +83,7 @@ img{max-width:100%;height:auto;display:block}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0}
 .nav__logo{display:flex;align-items:center;gap:10px}
 .nav__logo-dot{width:14px;height:14px;background:#D549F0;display:inline-block;flex-shrink:0}
-.nav__logo-text{font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:#F4F4F6}
+.nav__logo-text{font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:#F4F4F6;white-space:nowrap}
 .nav__logo-text span{color:#9A9AA6;font-weight:400}
 .nav__links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600}
 .nav__links a.active{color:#D549F0}
@@ -80,14 +93,14 @@ img{max-width:100%;height:auto;display:block}
 .nav__lang-inactive{color:#9A9AA6;padding:3px 10px}
 
 /* Mobile burger */
-.nav__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:60}
+.nav__burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;width:44px;height:44px;padding:0;z-index:60}
 .nav__burger span{display:block;width:24px;height:2px;background:#F4F4F6;border-radius:2px;transition:all .3s ease}
 .nav__burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .nav__burger.open span:nth-child(2){opacity:0}
 .nav__burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* Mobile menu overlay */
-.nav__mobile-menu{display:none;position:fixed;inset:0;top:56px;background:rgba(10,10,14,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:49;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.nav__mobile-menu{display:none;position:fixed;inset:0;top:var(--nav-h,64px);background:rgba(10,10,14,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:49;flex-direction:column;align-items:center;justify-content:center;gap:32px}
 .nav__mobile-menu.open{display:flex}
 .nav__mobile-menu a{font-family:'Sora',sans-serif;font-size:22px;font-weight:700;color:#F4F4F6;transition:color .25s}
 .nav__mobile-menu a:hover,.nav__mobile-menu a.active{color:#D549F0}
@@ -96,7 +109,7 @@ img{max-width:100%;height:auto;display:block}
 .btn{display:inline-block;padding:16px 32px;border-radius:999px;font-weight:700;font-size:16px;text-align:center;transition:all .25s ease;cursor:pointer;border:none;font-family:'Manrope',sans-serif}
 .btn--primary{background:#D549F0;color:#0A0A0E}
 .btn--primary:hover{background:#E272FF;color:#0A0A0E}
-.btn--outline{border:1px solid #3A3A44;color:#F4F4F6;background:transparent}
+.btn--outline{border:1px solid #64646F;color:#F4F4F6;background:transparent}
 .btn--outline:hover{border-color:#D549F0;color:#D549F0}
 .btn--sm{padding:10px 20px;font-size:14px}
 .btn--lg{padding:18px 40px;font-size:17px}
@@ -104,7 +117,7 @@ img{max-width:100%;height:auto;display:block}
 /* ── Cards ────────────────────────────────────────────── */
 .card{border:1px solid #26262E;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s ease}
 .card:hover{border-color:#3A3A44}
-.card__num{font-family:'Sora',sans-serif;color:#3A3A44;font-size:15px;font-weight:700;margin:0}
+.card__num{font-family:'Sora',sans-serif;color:#80808C;font-size:15px;font-weight:700;margin:0}
 .card__title{font-family:'Sora',sans-serif;font-size:22px;font-weight:700;margin:0}
 .card__desc{color:#9A9AA6;font-size:15px;line-height:1.65;margin:0}
 
@@ -154,7 +167,7 @@ img{max-width:100%;height:auto;display:block}
 .footer__links{display:flex;gap:24px;font-size:13px}
 .footer__links a{color:#9A9AA6}
 .footer__links a:hover{color:#D549F0}
-.footer__copy{font-size:13px;color:#5A5A66}
+.footer__copy{font-size:13px;color:#80808C}
 
 /* ── Contact page ─────────────────────────────────────── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;position:relative;isolation:isolate;padding:90px 0 100px}
@@ -167,11 +180,14 @@ img{max-width:100%;height:auto;display:block}
 .form{background:#0D0D12;border:1px solid #26262E;padding:44px 40px;display:flex;flex-direction:column;gap:20px}
 .form__group{display:flex;flex-direction:column;gap:8px}
 .form__label{font-size:13px;font-weight:700;color:#9A9AA6}
-.form__input,.form__select,.form__textarea{background:#131318;border:1px solid #26262E;color:#F4F4F6;padding:14px 16px;font-size:15px;font-family:'Manrope',sans-serif;outline:none;border-radius:0;transition:border-color .25s ease;width:100%}
+.form__input,.form__select,.form__textarea{background:#131318;border:1px solid #64646F;color:#F4F4F6;padding:14px 16px;font-size:15px;font-family:'Manrope',sans-serif;outline:none;border-radius:0;transition:border-color .25s ease;width:100%}
 .form__input:focus,.form__select:focus,.form__textarea:focus{border-color:#D549F0}
-.form__input::placeholder,.form__textarea::placeholder{color:#5A5A66}
+.form__input::placeholder,.form__textarea::placeholder{color:#80808C}
 .form__textarea{resize:vertical}
-.form__hint{font-size:12px;color:#5A5A66;text-align:center}
+.form__input[aria-invalid="true"]{border-color:#FF6B81}
+.form__error{font-size:13px;font-weight:600;color:#FF8A9B;margin:0}
+.form__error:empty{display:none}
+.form__hint{font-size:12px;color:#80808C;text-align:center}
 
 /* ── Service detail layout ────────────────────────────── */
 .svc-detail{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start;padding:80px 0}
@@ -182,8 +198,17 @@ img{max-width:100%;height:auto;display:block}
 .pixel-grid-deco{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 
 /* ── Scroll Animations ────────────────────────────────── */
-.animate-on-scroll{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+.js .animate-on-scroll{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.js .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+
+/* ── Reduced motion ───────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .show-splash .splash{display:none}
+  .blob{animation:none}
+  .js .animate-on-scroll{opacity:1;transform:none;transition:none}
+  .btn,.card,.nav__burger span,a{transition-duration:.01s}
+}
 
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
@@ -238,6 +263,13 @@ img{max-width:100%;height:auto;display:block}
 
 @media(max-width:600px){
   .container{padding-left:16px;padding-right:16px}
+
+  /* Nav */
+  .nav__inner{gap:12px}
+  .nav__right{gap:8px}
+  .nav__logo{gap:8px}
+  .nav__logo-text{font-size:16px}
+  .nav__right .btn--sm{width:auto;padding:8px 14px}
 
   /* Process */
   .process-grid{grid-template-columns:1fr}

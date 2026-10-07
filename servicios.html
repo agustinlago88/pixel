@@ -6,17 +6,29 @@
   <title>Servicios — Pixel Marketing Studio</title>
   <meta name="description" content="Meta Ads, gestión de redes, diseño y landings con CRM. Cuatro servicios pensados para que tu negocio high ticket venda más.">
   <meta name="theme-color" content="#0A0A0E">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="canonical" href="https://agustinlago88.github.io/pixel/servicios.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Servicios — Pixel Marketing Studio">
   <meta property="og:description" content="Cuatro servicios, un solo objetivo: que vendas más.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agustinlago88.github.io/pixel/servicios.html">
+  <meta property="og:site_name" content="Pixel Marketing Studio">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:image" content="https://agustinlago88.github.io/pixel/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Principal">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-dot"></span>
@@ -24,30 +36,32 @@
       </a>
       <div class="nav__links">
         <a href="index.html">Inicio</a>
-        <a href="servicios.html" class="active">Servicios</a>
+        <a href="servicios.html" class="active" aria-current="page">Servicios</a>
         <a href="casos.html">Casos</a>
         <a href="contacto.html">Contacto</a>
       </div>
       <div class="nav__right">
-        <div class="nav__lang">
+        <div class="nav__lang" aria-hidden="true">
           <span class="nav__lang-active">ES</span>
           <span class="nav__lang-inactive" title="Em breve">PT</span>
           <span class="nav__lang-inactive" title="Coming soon">EN</span>
         </div>
-        <a href="#" data-wa-link class="btn btn--primary btn--sm" target="_blank">Hablemos</a>
-        <button class="nav__burger" aria-label="Menú">
+        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank">Hablemos</a>
+        <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-    <div class="nav__mobile-menu">
+    <div class="nav__mobile-menu" id="mobileMenu">
       <a href="index.html">Inicio</a>
-      <a href="servicios.html" class="active">Servicios</a>
+      <a href="servicios.html" class="active" aria-current="page">Servicios</a>
       <a href="casos.html">Casos</a>
       <a href="contacto.html">Contacto</a>
-      <a href="#" data-wa-link class="btn btn--primary" target="_blank">Hablemos</a>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank">Hablemos</a>
     </div>
   </nav>
+
+  <main id="main">
 
   <!-- HEADER -->
   <section class="hero hero--page">
@@ -166,9 +180,11 @@
       <div class="blob blob--cta" aria-hidden="true"></div>
       <h2 class="heading-lg animate-on-scroll" style="margin-bottom:20px;text-wrap:pretty">Armemos el plan para tu negocio</h2>
       <p class="text-muted animate-on-scroll" style="font-size:18px;margin-bottom:36px">Diagnóstico inicial sin costo. Te decimos qué haríamos y cuánto costaría.</p>
-      <a href="#" data-wa-link class="btn btn--primary btn--lg animate-on-scroll" target="_blank">Escribinos por WhatsApp →</a>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--lg animate-on-scroll" target="_blank">Escribinos por WhatsApp →</a>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">

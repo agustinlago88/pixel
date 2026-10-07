@@ -15,10 +15,15 @@
   }
 
   // ── Splash ──────────────────────────────────────────────
+  // Shown only when <head> added .show-splash (first visit of the session).
+  // CSS fades it out by itself; JS just removes the node afterwards.
   function initSplash() {
     const splash = document.getElementById('splash');
     if (!splash) return;
-    setTimeout(function () { splash.classList.add('fade-out'); }, 1700);
+    if (!document.documentElement.classList.contains('show-splash')) {
+      splash.remove();
+      return;
+    }
     setTimeout(function () { splash.remove(); }, 2350);
   }
 
@@ -28,20 +33,48 @@
     const menu = document.querySelector('.nav__mobile-menu');
     if (!burger || !menu) return;
 
+    const nav = document.querySelector('.nav');
+
+    function setNavHeight() {
+      if (nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+
+    function setOpen(open) {
+      burger.classList.toggle('open', open);
+      menu.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        setNavHeight();
+        var first = menu.querySelector('a');
+        if (first) first.focus();
+      }
+    }
+
     burger.addEventListener('click', function () {
-      burger.classList.toggle('open');
-      menu.classList.toggle('open');
-      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+      setOpen(!menu.classList.contains('open'));
     });
 
     // Close on link click
     menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        burger.classList.remove('open');
-        menu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      a.addEventListener('click', function () { setOpen(false); });
     });
+
+    // Close on Escape and return focus to the burger
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        setOpen(false);
+        burger.focus();
+      }
+    });
+
+    // Close if the viewport grows past the mobile breakpoint
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && menu.classList.contains('open')) setOpen(false);
+    });
+
+    setNavHeight();
   }
 
   // ── WhatsApp Links ──────────────────────────────────────
@@ -58,20 +91,33 @@
     var form = document.getElementById('contactForm');
     if (!form) return;
 
-    var submitBtn = document.getElementById('contactSubmit');
-    if (!submitBtn) return;
+    var nombre = document.getElementById('fieldNombre');
+    var rubro = document.getElementById('fieldRubro');
+    var mensaje = document.getElementById('fieldMensaje');
+    var error = document.getElementById('nombreError');
 
-    submitBtn.addEventListener('click', function (e) {
+    function clearError() {
+      if (!nombre) return;
+      nombre.removeAttribute('aria-invalid');
+      if (error) error.textContent = '';
+    }
+    if (nombre) nombre.addEventListener('input', clearError);
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var nombre = document.getElementById('fieldNombre');
-      var rubro = document.getElementById('fieldRubro');
-      var mensaje = document.getElementById('fieldMensaje');
+      var name = nombre ? nombre.value.trim() : '';
+      if (nombre && !name) {
+        nombre.setAttribute('aria-invalid', 'true');
+        if (error) error.textContent = 'Escribí tu nombre para que sepamos a quién responder.';
+        nombre.focus();
+        return;
+      }
 
-      var parts = ['¡Hola! Soy ' + (nombre && nombre.value ? nombre.value : '…')];
+      var parts = ['¡Hola! Soy ' + name];
       if (rubro && rubro.value) parts.push('Rubro: ' + rubro.value);
-      if (mensaje && mensaje.value) parts.push(mensaje.value);
+      if (mensaje && mensaje.value.trim()) parts.push(mensaje.value.trim());
 
-      window.open(waLink(parts.join('. ')), '_blank');
+      window.open(waLink(parts.join('. ')), '_blank', 'noopener');
     });
   }
 
