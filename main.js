@@ -138,6 +138,112 @@
     elements.forEach(function (el) { observer.observe(el); });
   }
 
+  // ── Text Reveals (Cinematic Line-by-Line) ───────────────
+  function initTextReveals() {
+    var lines = document.querySelectorAll('.reveal-line');
+    if (!lines.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      lines.forEach(function (l) { l.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var target = entry.target;
+          var container = target.closest('h1, h2, h3, p, .hero') || target.parentElement;
+          var group = container ? Array.prototype.slice.call(container.querySelectorAll('.reveal-line')) : [target];
+          var idx = group.indexOf(target);
+          var delay = idx > 0 ? idx * 130 : 0;
+
+          setTimeout(function () {
+            target.classList.add('is-visible');
+          }, delay);
+
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+    lines.forEach(function (l) { observer.observe(l); });
+  }
+
+  // ── Flow Lines (Scroll Directives) ──────────────────────
+  function initFlowLines() {
+    var lines = document.querySelectorAll('.flow-line, .flow-line--vertical');
+    if (!lines.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      lines.forEach(function (l) { l.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+
+    lines.forEach(function (l) { observer.observe(l); });
+  }
+
+  // ── Subtitle Rotator (Morph Blur) ───────────────────────
+  function initTextRotator() {
+    var rot = document.getElementById('rotator');
+    if (!rot) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var niches = [
+      'Meta Ads para Medicina Estética',
+      'Lanzamientos Inmobiliarios en Pozo',
+      'Concesionarias y Modelos Premium',
+      'Embudos High Ticket & Cierre'
+    ];
+    var custom = rot.getAttribute('data-niches');
+    if (custom) {
+      try { niches = JSON.parse(custom); } catch (e) {}
+    }
+
+    var idx = 0;
+    setInterval(function () {
+      rot.classList.add('blur-out');
+      setTimeout(function () {
+        idx = (idx + 1) % niches.length;
+        rot.textContent = niches[idx];
+        rot.classList.remove('blur-out');
+        rot.classList.add('blur-in');
+        setTimeout(function () {
+          rot.classList.remove('blur-in');
+        }, 450);
+      }, 380);
+    }, 3400);
+  }
+
+  // ── Interactive Glow Cards (Mouse Spotlight) ───────────
+  function initGlowCards() {
+    if (!window.matchMedia('(hover: hover)').matches) return;
+    var cards = document.querySelectorAll('.glow-card');
+    if (!cards.length) return;
+
+    cards.forEach(function (card) {
+      var rafId = null;
+      card.addEventListener('mousemove', function (e) {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(function () {
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', x + 'px');
+          card.style.setProperty('--mouse-y', y + 'px');
+        });
+      }, { passive: true });
+    });
+  }
+
   // ── Init ────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
     initSplash();
@@ -145,5 +251,9 @@
     initWhatsAppLinks();
     initContactForm();
     initScrollAnimations();
+    initTextReveals();
+    initFlowLines();
+    initTextRotator();
+    initGlowCards();
   });
 })();
