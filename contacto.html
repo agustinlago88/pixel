@@ -45,7 +45,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Saltar al contenido</a>
 
   <!-- NAV -->
   <nav class="nav" aria-label="Principal">
@@ -55,29 +55,34 @@
         <span class="nav__logo-text">Pixel<span> Marketing Studio</span></span>
       </a>
       <div class="nav__links">
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="casos.html">Casos</a>
-        <a href="contacto.html" class="active" aria-current="page">Contacto</a>
+        <a href="index.html" data-i18n="nav.home">Inicio</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+        <a href="casos.html" data-i18n="nav.cases">Casos</a>
+        <a href="contacto.html" class="active" aria-current="page" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="nav__right">
-        <div class="nav__lang" aria-hidden="true">
-          <span class="nav__lang-active">ES</span>
-          <span class="nav__lang-inactive" title="Em breve">PT</span>
-          <span class="nav__lang-inactive" title="Coming soon">EN</span>
+        <div class="nav__lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="nav__lang-btn active" data-lang-btn="es" aria-pressed="true">ES</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
         </div>
-        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank">Hablemos</a>
+        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank" data-i18n="nav.cta">Hablemos</a>
         <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
     <div class="nav__mobile-menu" id="mobileMenu">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="casos.html">Casos</a>
-      <a href="contacto.html" class="active" aria-current="page">Contacto</a>
-      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank">Hablemos</a>
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+      <a href="casos.html" data-i18n="nav.cases">Casos</a>
+      <a href="contacto.html" class="active" aria-current="page" data-i18n="nav.contact">Contacto</a>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank" data-i18n="nav.cta">Hablemos</a>
+      <div class="nav__lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="nav__lang-btn active" data-lang-btn="es" aria-pressed="true">ES</button>
+        <button type="button" class="nav__lang-btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+        <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
     </div>
   </nav>
 
@@ -93,13 +98,13 @@
       <div style="display:flex;flex-direction:column;gap:28px">
         <div>
           <p class="section-label section-label--lg">
-            <span class="reveal-mask"><span class="reveal-line">Contacto</span></span>
+            <span class="reveal-mask"><span class="reveal-line" data-i18n="contacto.header.label">Contacto</span></span>
           </p>
           <h1 class="heading-xl" style="text-wrap:pretty">
-            <span class="reveal-mask"><span class="reveal-line">Hablemos de tu</span></span>
-            <span class="reveal-mask"><span class="reveal-line"><span class="text-accent">próximo cliente</span>.</span></span>
+            <span class="reveal-mask"><span class="reveal-line" data-i18n="contacto.header.h1_1">Hablemos de tu</span></span>
+            <span class="reveal-mask"><span class="reveal-line" data-i18n="contacto.header.h1_2"><span class="text-accent">próximo cliente</span>.</span></span>
           </h1>
-          <p class="text-muted" style="font-size:18px;line-height:1.6;margin:24px 0 0">Contanos sobre tu negocio y te respondemos el mismo día con una primera mirada y próximos pasos.</p>
+          <p class="text-muted" style="font-size:18px;line-height:1.6;margin:24px 0 0" data-i18n="contacto.header.desc">Contanos sobre tu negocio y te respondemos el mismo día con una primera mirada y próximos pasos.</p>
         </div>
 
         <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="contact-box contact-box--wa glow-card" target="_blank">
@@ -113,35 +118,35 @@
         </a>
 
         <div class="contact-box glow-card">
-          <p class="sora" style="font-weight:700;font-size:15px;margin:0">¿Qué pasa después de escribirnos?</p>
-          <p class="text-muted" style="font-size:14px;line-height:1.7;margin:8px 0 0">1. Llamada de 20 minutos para conocer tu negocio.<br>2. Diagnóstico sin costo de tu presencia digital y pauta actual.<br>3. Propuesta con plan, presupuesto y resultados esperados.</p>
+          <p class="sora" style="font-weight:700;font-size:15px;margin:0" data-i18n="contacto.faq.title">¿Qué pasa después de escribirnos?</p>
+          <p class="text-muted" style="font-size:14px;line-height:1.7;margin:8px 0 0" data-i18n="contacto.faq.desc">1. Llamada de 20 minutos para conocer tu negocio.<br>2. Diagnóstico sin costo de tu presencia digital y pauta actual.<br>3. Propuesta con plan, presupuesto y resultados esperados.</p>
         </div>
       </div>
 
       <!-- Form -->
       <form class="form glow-card" id="contactForm" novalidate>
-        <h2 class="sora" style="font-weight:700;font-size:24px;margin:0">Dejanos tus datos</h2>
+        <h2 class="sora" style="font-weight:700;font-size:24px;margin:0" data-i18n="contacto.form.title">Dejanos tus datos</h2>
         <div class="form__group">
-          <label class="form__label" for="fieldNombre">Nombre <span aria-hidden="true">*</span></label>
-          <input id="fieldNombre" name="nombre" type="text" placeholder="Tu nombre" class="form__input" autocomplete="name" required aria-describedby="nombreError">
+          <label class="form__label" for="fieldNombre"><span data-i18n="contacto.form.name_label">Nombre</span> <span aria-hidden="true">*</span></label>
+          <input id="fieldNombre" name="nombre" type="text" placeholder="Tu nombre" data-i18n-placeholder="contacto.form.name_ph" class="form__input" autocomplete="name" required aria-describedby="nombreError">
           <p class="form__error" id="nombreError" aria-live="polite"></p>
         </div>
         <div class="form__group">
-          <label class="form__label" for="fieldRubro">Rubro</label>
+          <label class="form__label" for="fieldRubro" data-i18n="contacto.form.niche_label">Rubro</label>
           <select id="fieldRubro" name="rubro" class="form__select">
-            <option value="">Elegí tu rubro</option>
-            <option value="Medicina estética">Medicina estética</option>
-            <option value="Inmobiliaria">Inmobiliaria</option>
-            <option value="Concesionaria">Concesionaria</option>
-            <option value="Otro">Otro</option>
+            <option value="" data-i18n="contacto.form.niche_opt0">Elegí tu rubro</option>
+            <option value="Medicina estética" data-i18n="contacto.form.niche_opt1">Medicina estética</option>
+            <option value="Inmobiliaria" data-i18n="contacto.form.niche_opt2">Inmobiliaria</option>
+            <option value="Concesionaria" data-i18n="contacto.form.niche_opt3">Concesionaria</option>
+            <option value="Otro" data-i18n="contacto.form.niche_opt4">Otro</option>
           </select>
         </div>
         <div class="form__group">
-          <label class="form__label" for="fieldMensaje">Mensaje</label>
-          <textarea id="fieldMensaje" name="mensaje" rows="4" placeholder="Contanos brevemente tu situación y objetivo" class="form__textarea"></textarea>
+          <label class="form__label" for="fieldMensaje" data-i18n="contacto.form.msg_label">Mensaje</label>
+          <textarea id="fieldMensaje" name="mensaje" rows="4" placeholder="Contanos brevemente tu situación y objetivo" data-i18n-placeholder="contacto.form.msg_ph" class="form__textarea"></textarea>
         </div>
-        <button type="submit" id="contactSubmit" class="btn btn--primary">Enviar por WhatsApp <span aria-hidden="true">→</span></button>
-        <p class="form__hint">Se abre WhatsApp con tu mensaje ya escrito.</p>
+        <button type="submit" id="contactSubmit" class="btn btn--primary" data-i18n="contacto.form.btn">Enviar por WhatsApp →</button>
+        <p class="form__hint" data-i18n="contacto.form.hint">Se abre WhatsApp con tu mensaje ya escrito.</p>
       </form>
     </div>
   </section>
@@ -156,14 +161,15 @@
         <span class="footer__brand-name">Pixel Marketing Studio</span>
       </div>
       <div class="footer__links">
-        <a href="servicios.html">Servicios</a>
-        <a href="casos.html">Casos</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+        <a href="casos.html" data-i18n="nav.cases">Casos</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       </div>
-      <p class="footer__copy">© 2026 Pixel Marketing Studio</p>
+      <p class="footer__copy" data-i18n="footer.rights">© 2026 Pixel Marketing Studio</p>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

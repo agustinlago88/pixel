@@ -45,7 +45,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Saltar al contenido</a>
 
   <!-- SPLASH -->
   <div id="splash" class="splash">
@@ -74,18 +74,18 @@
         <span class="nav__logo-text">Pixel<span> Marketing Studio</span></span>
       </a>
       <div class="nav__links">
-        <a href="index.html" class="active" aria-current="page">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="casos.html">Casos</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="index.html" class="active" aria-current="page" data-i18n="nav.home">Inicio</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+        <a href="casos.html" data-i18n="nav.cases">Casos</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="nav__right">
-        <div class="nav__lang" aria-hidden="true">
-          <span class="nav__lang-active">ES</span>
-          <span class="nav__lang-inactive" title="Em breve">PT</span>
-          <span class="nav__lang-inactive" title="Coming soon">EN</span>
+        <div class="nav__lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="nav__lang-btn active" data-lang-btn="es" aria-pressed="true">ES</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
         </div>
-        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank">Hablemos</a>
+        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank" data-i18n="nav.cta">Hablemos</a>
         <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span><span></span>
         </button>
@@ -93,11 +93,16 @@
     </div>
     <!-- Mobile menu -->
     <div class="nav__mobile-menu" id="mobileMenu">
-      <a href="index.html" class="active" aria-current="page">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="casos.html">Casos</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank">Hablemos</a>
+      <a href="index.html" class="active" aria-current="page" data-i18n="nav.home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+      <a href="casos.html" data-i18n="nav.cases">Casos</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank" data-i18n="nav.cta">Hablemos</a>
+      <div class="nav__lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="nav__lang-btn active" data-lang-btn="es" aria-pressed="true">ES</button>
+        <button type="button" class="nav__lang-btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+        <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
     </div>
   </nav>
 
@@ -114,20 +119,20 @@
         <span class="hero__pixel" style="background:#1E1E26"></span><span class="hero__pixel" style="background:#1E1E26"></span><span class="hero__pixel" style="background:#D549F0"></span><span class="hero__pixel" style="background:#1E1E26"></span>
       </div>
       <p class="section-label section-label--lg">
-        <span class="reveal-mask"><span class="reveal-line">Agencia de marketing high ticket · Meta Ads · Redes · Diseño</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.hero.tagline">Agencia de marketing high ticket · Meta Ads · Redes · Diseño</span></span>
       </p>
       <h1 class="heading-xl" style="max-width:820px;text-wrap:pretty">
-        <span class="reveal-mask"><span class="reveal-line">Convertimos clics en</span></span>
-        <span class="reveal-mask"><span class="reveal-line">clientes de <span class="text-accent">alto valor</span>.</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.hero.h1_1">Convertimos clics en</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.hero.h1_2">clientes de <span class="text-accent">alto valor</span>.</span></span>
       </h1>
       <div class="rotator-container" style="margin:22px 0 0;font-size:16px;color:#9A9AA6;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        <span>Especialistas en:</span>
+        <span data-i18n="index.hero.rotator_label">Especialistas en:</span>
         <span class="rotator-wrapper"><span id="rotator" class="rotator-text text-accent" style="font-weight:700">Meta Ads para Medicina Estética</span></span>
       </div>
-      <p class="text-muted" style="font-size:20px;line-height:1.6;max-width:600px;margin:22px 0 38px">Agencia especializada en negocios high ticket: estrategia, pauta, creatividad y tecnología en un solo equipo para captar clientes que realmente valen.</p>
+      <p class="text-muted" style="font-size:20px;line-height:1.6;max-width:600px;margin:22px 0 38px" data-i18n="index.hero.desc">Agencia especializada en negocios high ticket: estrategia, pauta, creatividad y tecnología en un solo equipo para captar clientes que realmente valen.</p>
       <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
-        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank">Agendar por WhatsApp →</a>
-        <a href="casos.html" class="btn btn--outline">Ver casos</a>
+        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank" data-i18n="index.hero.cta_wa">Agendar por WhatsApp →</a>
+        <a href="casos.html" class="btn btn--outline" data-i18n="index.hero.cta_cases">Ver casos</a>
       </div>
       <div style="margin-top:64px;width:100%">
         <div class="flow-line"></div>
@@ -139,12 +144,12 @@
   <section class="section--alt">
     <div class="container" style="padding:120px 32px;text-align:center;position:relative;isolation:isolate">
       <div class="blob blob--lema" aria-hidden="true"></div>
-      <p class="section-label animate-on-scroll">Nuestro lema</p>
+      <p class="section-label animate-on-scroll" data-i18n="index.lema.label">Nuestro lema</p>
       <h2 class="heading-lg" style="max-width:820px;margin:0 auto;text-wrap:pretty">
-        <span class="reveal-mask"><span class="reveal-line">Tu crecimiento es</span></span>
-        <span class="reveal-mask"><span class="reveal-line">nuestra <span class="text-accent">métrica</span>.</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.lema.h2_1">Tu crecimiento es</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.lema.h2_2">nuestra <span class="text-accent">métrica</span>.</span></span>
       </h2>
-      <p class="text-muted animate-on-scroll" style="font-size:18px;line-height:1.7;max-width:640px;margin:26px auto 0">No nos quedamos en los números: aprendemos tu nicho, cuidamos la experiencia de tu cliente y te hablamos claro, sin tecnicismos. Nos va bien únicamente cuando a vos te va bien.</p>
+      <p class="text-muted animate-on-scroll" style="font-size:18px;line-height:1.7;max-width:640px;margin:26px auto 0" data-i18n="index.lema.desc">No nos quedamos en los números: aprendemos tu nicho, cuidamos la experiencia de tu cliente y te hablamos claro, sin tecnicismos. Nos va bien únicamente cuando a vos te va bien.</p>
     </div>
   </section>
 
@@ -153,33 +158,33 @@
     <div class="container" style="padding:90px 32px">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap">
         <div>
-          <p class="section-label">Servicios</p>
+          <p class="section-label" data-i18n="index.services.label">Servicios</p>
           <h2 class="heading-md">
-            <span class="reveal-mask"><span class="reveal-line">Todo lo que tu marca necesita para vender</span></span>
+            <span class="reveal-mask"><span class="reveal-line" data-i18n="index.services.h2">Todo lo que tu marca necesita para vender</span></span>
           </h2>
         </div>
-        <a href="servicios.html" class="text-accent" style="font-weight:700;font-size:15px;white-space:nowrap">Ver en detalle →</a>
+        <a href="servicios.html" class="text-accent" style="font-weight:700;font-size:15px;white-space:nowrap" data-i18n="index.services.link">Ver en detalle →</a>
       </div>
       <div class="pixel-grid-deco">
         <div class="card glow-card animate-on-scroll">
           <p class="card__num">01</p>
-          <h3 class="card__title">Meta Ads</h3>
-          <p class="card__desc">Campañas de captación en Facebook e Instagram: segmentación, creativos, optimización diaria y reportes claros.</p>
+          <h3 class="card__title" data-i18n="index.services.card1.title">Meta Ads</h3>
+          <p class="card__desc" data-i18n="index.services.card1.desc">Campañas de captación en Facebook e Instagram: segmentación, creativos, optimización diaria y reportes claros.</p>
         </div>
         <div class="card glow-card animate-on-scroll">
           <p class="card__num">02</p>
-          <h3 class="card__title">Gestión de redes</h3>
-          <p class="card__desc">Contenido que construye confianza: calendario editorial, producción y comunidad alineados a la pauta.</p>
+          <h3 class="card__title" data-i18n="index.services.card2.title">Gestión de redes</h3>
+          <p class="card__desc" data-i18n="index.services.card2.desc">Contenido que construye confianza: calendario editorial, producción y comunidad alineados a la pauta.</p>
         </div>
         <div class="card glow-card animate-on-scroll">
           <p class="card__num">03</p>
-          <h3 class="card__title">Diseño</h3>
-          <p class="card__desc">Identidad y piezas que venden: anuncios, landings y gráfica pensados para conversión, no solo estética.</p>
+          <h3 class="card__title" data-i18n="index.services.card3.title">Diseño</h3>
+          <p class="card__desc" data-i18n="index.services.card3.desc">Identidad y piezas que venden: anuncios, landings y gráfica pensados para conversión, no solo estética.</p>
         </div>
         <div class="card glow-card animate-on-scroll">
           <p class="card__num">04</p>
-          <h3 class="card__title">Landings y CRM</h3>
-          <p class="card__desc">Landings de conversión y un CRM personalizado para gestionar cada dato del potencial cliente, del clic al cierre.</p>
+          <h3 class="card__title" data-i18n="index.services.card4.title">Landings y CRM</h3>
+          <p class="card__desc" data-i18n="index.services.card4.desc">Landings de conversión y un CRM personalizado para gestionar cada dato del potencial cliente, del clic al cierre.</p>
         </div>
       </div>
     </div>
@@ -189,30 +194,30 @@
   <section class="section--alt">
     <div class="container" style="padding:90px 32px">
       <div class="flow-line flow-line--subtle" style="margin-bottom:48px"></div>
-      <p class="section-label">Proceso</p>
+      <p class="section-label" data-i18n="index.process.label">Proceso</p>
       <h2 class="heading-md" style="margin-bottom:48px">
-        <span class="reveal-mask"><span class="reveal-line">Cómo trabajamos</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.process.h2">Cómo trabajamos</span></span>
       </h2>
       <div class="process-grid">
         <div class="process-step animate-on-scroll">
-          <p class="process-step__week">Semana 1</p>
-          <h3 class="process-step__title">Diagnóstico</h3>
-          <p class="process-step__desc">Auditamos tu marca, competencia y embudo actual. Definimos objetivos y números meta.</p>
+          <p class="process-step__week" data-i18n="index.process.step1.week">Semana 1</p>
+          <h3 class="process-step__title" data-i18n="index.process.step1.title">Diagnóstico</h3>
+          <p class="process-step__desc" data-i18n="index.process.step1.desc">Auditamos tu marca, competencia y embudo actual. Definimos objetivos y números meta.</p>
         </div>
         <div class="process-step animate-on-scroll">
-          <p class="process-step__week">Semana 2</p>
-          <h3 class="process-step__title">Estrategia</h3>
-          <p class="process-step__desc">Plan de campañas, contenido y piezas: mensajes, audiencias y presupuesto por objetivo.</p>
+          <p class="process-step__week" data-i18n="index.process.step2.week">Semana 2</p>
+          <h3 class="process-step__title" data-i18n="index.process.step2.title">Estrategia</h3>
+          <p class="process-step__desc" data-i18n="index.process.step2.desc">Plan de campañas, contenido y piezas: mensajes, audiencias y presupuesto por objetivo.</p>
         </div>
         <div class="process-step animate-on-scroll">
-          <p class="process-step__week">Semana 3</p>
-          <h3 class="process-step__title">Lanzamiento</h3>
-          <p class="process-step__desc">Salimos al aire con campañas, creativos y seguimiento de leads configurado de punta a punta.</p>
+          <p class="process-step__week" data-i18n="index.process.step3.week">Semana 3</p>
+          <h3 class="process-step__title" data-i18n="index.process.step3.title">Lanzamiento</h3>
+          <p class="process-step__desc" data-i18n="index.process.step3.desc">Salimos al aire con campañas, creativos y seguimiento de leads configurado de punta a punta.</p>
         </div>
         <div class="process-step animate-on-scroll">
-          <p class="process-step__week">Continuo</p>
-          <h3 class="process-step__title">Optimización</h3>
-          <p class="process-step__desc">Iteramos creativos y audiencias cada semana. Reporte mensual con costos y resultados reales.</p>
+          <p class="process-step__week" data-i18n="index.process.step4.week">Continuo</p>
+          <h3 class="process-step__title" data-i18n="index.process.step4.title">Optimización</h3>
+          <p class="process-step__desc" data-i18n="index.process.step4.desc">Iteramos creativos y audiencias cada semana. Reporte mensual con costos y resultados reales.</p>
         </div>
       </div>
     </div>
@@ -224,10 +229,10 @@
       <div class="flow-line flow-line--subtle" style="margin-bottom:72px"></div>
       <div class="blob blob--cta" aria-hidden="true"></div>
       <h2 class="heading-lg" style="margin-bottom:20px;text-wrap:pretty">
-        <span class="reveal-mask"><span class="reveal-line">¿Listo para llenar tu agenda de clientes?</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="index.cta.h2">¿Listo para llenar tu agenda de clientes?</span></span>
       </h2>
-      <p class="text-muted animate-on-scroll" style="font-size:18px;margin-bottom:36px">Contanos sobre tu negocio y te respondemos el mismo día.</p>
-      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--lg animate-on-scroll" target="_blank">Escribinos por WhatsApp →</a>
+      <p class="text-muted animate-on-scroll" style="font-size:18px;margin-bottom:36px" data-i18n="index.cta.desc">Contanos sobre tu negocio y te respondemos el mismo día.</p>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--lg animate-on-scroll" target="_blank" data-i18n="index.cta.btn">Escribinos por WhatsApp →</a>
     </div>
   </section>
 
@@ -241,14 +246,15 @@
         <span class="footer__brand-name">Pixel Marketing Studio</span>
       </div>
       <div class="footer__links">
-        <a href="servicios.html">Servicios</a>
-        <a href="casos.html">Casos</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+        <a href="casos.html" data-i18n="nav.cases">Casos</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       </div>
-      <p class="footer__copy">© 2026 Pixel Marketing Studio</p>
+      <p class="footer__copy" data-i18n="footer.rights">© 2026 Pixel Marketing Studio</p>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

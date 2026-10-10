@@ -45,7 +45,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Saltar al contenido</a>
 
   <!-- NAV -->
   <nav class="nav" aria-label="Principal">
@@ -55,29 +55,34 @@
         <span class="nav__logo-text">Pixel<span> Marketing Studio</span></span>
       </a>
       <div class="nav__links">
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="casos.html" class="active" aria-current="page">Casos</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="index.html" data-i18n="nav.home">Inicio</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+        <a href="casos.html" class="active" aria-current="page" data-i18n="nav.cases">Casos</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="nav__right">
-        <div class="nav__lang" aria-hidden="true">
-          <span class="nav__lang-active">ES</span>
-          <span class="nav__lang-inactive" title="Em breve">PT</span>
-          <span class="nav__lang-inactive" title="Coming soon">EN</span>
+        <div class="nav__lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="nav__lang-btn active" data-lang-btn="es" aria-pressed="true">ES</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
         </div>
-        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank">Hablemos</a>
+        <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--sm" target="_blank" data-i18n="nav.cta">Hablemos</a>
         <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
     <div class="nav__mobile-menu" id="mobileMenu">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="casos.html" class="active" aria-current="page">Casos</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank">Hablemos</a>
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+      <a href="casos.html" class="active" aria-current="page" data-i18n="nav.cases">Casos</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary" target="_blank" data-i18n="nav.cta">Hablemos</a>
+      <div class="nav__lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="nav__lang-btn active" data-lang-btn="es" aria-pressed="true">ES</button>
+        <button type="button" class="nav__lang-btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+        <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
     </div>
   </nav>
 
@@ -89,13 +94,13 @@
       <div class="blob blob--hero-a" aria-hidden="true"></div>
       <div class="blob blob--hero-b" aria-hidden="true"></div>
       <p class="section-label section-label--lg">
-        <span class="reveal-mask"><span class="reveal-line">Casos</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="casos.header.label">Casos</span></span>
       </p>
       <h1 class="heading-xl" style="max-width:760px;text-wrap:pretty">
-        <span class="reveal-mask"><span class="reveal-line">Resultados que se miden en</span></span>
-        <span class="reveal-mask"><span class="reveal-line"><span class="text-accent">clientes</span>, no en likes.</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="casos.header.h1_1">Resultados que se miden en</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="casos.header.h1_2"><span class="text-accent">clientes</span>, no en likes.</span></span>
       </h1>
-      <p class="text-dim" style="font-size:16px;line-height:1.6;max-width:620px;margin:26px 0 0;border:1px dashed #3A3A44;padding:14px 18px">Los datos de esta página son ilustrativos — muestran el formato. Los reemplazamos con tus resultados reales cuando los tengas.</p>
+      <p class="text-dim" style="font-size:16px;line-height:1.6;max-width:620px;margin:26px 0 0;border:1px dashed #3A3A44;padding:14px 18px" data-i18n="casos.header.disclaimer">Los datos de esta página son ilustrativos — muestran el formato. Los reemplazamos con tus resultados reales cuando los tengas.</p>
       <div style="margin-top:54px;width:100%">
         <div class="flow-line"></div>
       </div>
@@ -109,25 +114,25 @@
       <!-- Caso 1 -->
       <div class="case-card glow-card animate-on-scroll">
         <div class="case-card__info">
-          <p class="section-label" style="margin:0">Medicina estética</p>
-          <h2 class="heading-sm">Clínica de estética · CABA</h2>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Desafío:</strong> agenda irregular y leads que preguntaban precio y desaparecían.</p>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Qué hicimos:</strong> campañas por tratamiento con filtrado de presupuesto en el formulario, más contenido de casos reales en Instagram.</p>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Clientes:</strong> Dr. Leandro Vila, Dr. Gastón Berbel, Dra. María Eugenia Castello, Dr. Fernando Glaria.</p>
-          <p class="text-dim" style="font-size:13px;margin:auto 0 0">Servicios: Meta Ads + Redes · 6 meses</p>
+          <p class="section-label" style="margin:0" data-i18n="casos.c1.tag">Medicina estética</p>
+          <h2 class="heading-sm" data-i18n="casos.c1.title">Clínica de estética · CABA</h2>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c1.challenge"><strong style="color:#F4F4F6">Desafío:</strong> agenda irregular y leads que preguntaban precio y desaparecían.</p>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c1.solution"><strong style="color:#F4F4F6">Qué hicimos:</strong> campañas por tratamiento con filtrado de presupuesto en el formulario, más contenido de casos reales en Instagram.</p>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c1.clients"><strong style="color:#F4F4F6">Clientes:</strong> Dr. Leandro Vila, Dr. Gastón Berbel, Dra. María Eugenia Castello, Dr. Fernando Glaria.</p>
+          <p class="text-dim" style="font-size:13px;margin:auto 0 0" data-i18n="casos.c1.meta">Servicios: Meta Ads + Redes · 6 meses</p>
         </div>
         <div class="case-card__stats">
           <div class="case-card__stat">
-            <p class="case-card__stat-value">−42%</p>
-            <p class="case-card__stat-label">costo por lead vs. agencia anterior</p>
+            <p class="case-card__stat-value" data-i18n="casos.c1.s1_val">−42%</p>
+            <p class="case-card__stat-label" data-i18n="casos.c1.s1_lbl">costo por lead vs. agencia anterior</p>
           </div>
           <div class="case-card__stat">
-            <p class="case-card__stat-value">120+</p>
-            <p class="case-card__stat-label">consultas calificadas por mes</p>
+            <p class="case-card__stat-value" data-i18n="casos.c1.s2_val">120+</p>
+            <p class="case-card__stat-label" data-i18n="casos.c1.s2_lbl">consultas calificadas por mes</p>
           </div>
           <div class="case-card__stat">
-            <p class="case-card__stat-value">5.2×</p>
-            <p class="case-card__stat-label">retorno sobre inversión publicitaria</p>
+            <p class="case-card__stat-value" data-i18n="casos.c1.s3_val">5.2×</p>
+            <p class="case-card__stat-label" data-i18n="casos.c1.s3_lbl">retorno sobre inversión publicitaria</p>
           </div>
         </div>
       </div>
@@ -135,25 +140,25 @@
       <!-- Caso 2 -->
       <div class="case-card glow-card animate-on-scroll">
         <div class="case-card__info">
-          <p class="section-label" style="margin:0">Inmobiliaria</p>
-          <h2 class="heading-sm">Desarrolladora · Zona Norte</h2>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Desafío:</strong> lanzamiento de un desarrollo en pozo con poca base de interesados.</p>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Qué hicimos:</strong> embudo con video del proyecto, formulario con filtro de presupuesto y remarketing a visitantes de la landing.</p>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Clientes:</strong> Fortini, Life Perú, Real Tainer.</p>
-          <p class="text-dim" style="font-size:13px;margin:auto 0 0">Servicios: Meta Ads + Diseño · 4 meses</p>
+          <p class="section-label" style="margin:0" data-i18n="casos.c2.tag">Inmobiliaria</p>
+          <h2 class="heading-sm" data-i18n="casos.c2.title">Desarrolladora · Zona Norte</h2>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c2.challenge"><strong style="color:#F4F4F6">Desafío:</strong> lanzamiento de un desarrollo en pozo con poca base de interesados.</p>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c2.solution"><strong style="color:#F4F4F6">Qué hicimos:</strong> embudo con video del proyecto, formulario con filtro de presupuesto y remarketing a visitantes de la landing.</p>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c2.clients"><strong style="color:#F4F4F6">Clientes:</strong> Fortini, Life Perú, Real Tainer.</p>
+          <p class="text-dim" style="font-size:13px;margin:auto 0 0" data-i18n="casos.c2.meta">Servicios: Meta Ads + Diseño · 4 meses</p>
         </div>
         <div class="case-card__stats">
           <div class="case-card__stat">
-            <p class="case-card__stat-value">380</p>
-            <p class="case-card__stat-label">interesados calificados en el lanzamiento</p>
+            <p class="case-card__stat-value" data-i18n="casos.c2.s1_val">380</p>
+            <p class="case-card__stat-label" data-i18n="casos.c2.s1_lbl">interesados calificados en el lanzamiento</p>
           </div>
           <div class="case-card__stat">
-            <p class="case-card__stat-value">47</p>
-            <p class="case-card__stat-label">visitas al showroom por mes</p>
+            <p class="case-card__stat-value" data-i18n="casos.c2.s2_val">47</p>
+            <p class="case-card__stat-label" data-i18n="casos.c2.s2_lbl">visitas al showroom por mes</p>
           </div>
           <div class="case-card__stat">
-            <p class="case-card__stat-value">11</p>
-            <p class="case-card__stat-label">unidades reservadas en 4 meses</p>
+            <p class="case-card__stat-value" data-i18n="casos.c2.s3_val">11</p>
+            <p class="case-card__stat-label" data-i18n="casos.c2.s3_lbl">unidades reservadas en 4 meses</p>
           </div>
         </div>
       </div>
@@ -161,25 +166,25 @@
       <!-- Caso 3 -->
       <div class="case-card glow-card animate-on-scroll">
         <div class="case-card__info">
-          <p class="section-label" style="margin:0">Concesionaria</p>
-          <h2 class="heading-sm">Concesionaria oficial · GBA</h2>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Desafío:</strong> muchas consultas de baja calidad que saturaban a los vendedores.</p>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Qué hicimos:</strong> campañas por modelo con planes de financiación, precalificación en el formulario y derivación directa a WhatsApp del vendedor.</p>
-          <p class="text-muted" style="font-size:15px;line-height:1.7"><strong style="color:#F4F4F6">Clientes:</strong> Sport Cars, Free Life Honda.</p>
-          <p class="text-dim" style="font-size:13px;margin:auto 0 0">Servicios: Meta Ads + Redes + Diseño · 8 meses</p>
+          <p class="section-label" style="margin:0" data-i18n="casos.c3.tag">Concesionaria</p>
+          <h2 class="heading-sm" data-i18n="casos.c3.title">Concesionaria oficial · GBA</h2>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c3.challenge"><strong style="color:#F4F4F6">Desafío:</strong> muchas consultas de baja calidad que saturaban a los vendedores.</p>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c3.solution"><strong style="color:#F4F4F6">Qué hicimos:</strong> campañas por modelo con planes de financiación, precalificación en el formulario y derivación directa a WhatsApp del vendedor.</p>
+          <p class="text-muted" style="font-size:15px;line-height:1.7" data-i18n="casos.c3.clients"><strong style="color:#F4F4F6">Clientes:</strong> Sport Cars, Free Life Honda.</p>
+          <p class="text-dim" style="font-size:13px;margin:auto 0 0" data-i18n="casos.c3.meta">Servicios: Meta Ads + Redes + Diseño · 8 meses</p>
         </div>
         <div class="case-card__stats">
           <div class="case-card__stat">
-            <p class="case-card__stat-value">−55%</p>
-            <p class="case-card__stat-label">consultas descartadas por vendedores</p>
+            <p class="case-card__stat-value" data-i18n="casos.c3.s1_val">−55%</p>
+            <p class="case-card__stat-label" data-i18n="casos.c3.s1_lbl">consultas descartadas por vendedores</p>
           </div>
           <div class="case-card__stat">
-            <p class="case-card__stat-value">90+</p>
-            <p class="case-card__stat-label">test drives agendados por mes</p>
+            <p class="case-card__stat-value" data-i18n="casos.c3.s2_val">90+</p>
+            <p class="case-card__stat-label" data-i18n="casos.c3.s2_lbl">test drives agendados por mes</p>
           </div>
           <div class="case-card__stat">
-            <p class="case-card__stat-value">23</p>
-            <p class="case-card__stat-label">ventas atribuidas a campañas por mes</p>
+            <p class="case-card__stat-value" data-i18n="casos.c3.s3_val">23</p>
+            <p class="case-card__stat-label" data-i18n="casos.c3.s3_lbl">ventas atribuidas a campañas por mes</p>
           </div>
         </div>
       </div>
@@ -193,10 +198,10 @@
       <div class="flow-line flow-line--subtle" style="margin-bottom:72px"></div>
       <div class="blob blob--cta" aria-hidden="true"></div>
       <h2 class="heading-lg" style="margin-bottom:20px;text-wrap:pretty">
-        <span class="reveal-mask"><span class="reveal-line">Tu negocio puede ser el próximo caso</span></span>
+        <span class="reveal-mask"><span class="reveal-line" data-i18n="casos.cta.h2">Tu negocio puede ser el próximo caso</span></span>
       </h2>
-      <p class="text-muted animate-on-scroll" style="font-size:18px;margin-bottom:36px">Contanos tu situación y te decimos qué resultados son realistas para tu rubro.</p>
-      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--lg animate-on-scroll" target="_blank">Escribinos por WhatsApp →</a>
+      <p class="text-muted animate-on-scroll" style="font-size:18px;margin-bottom:36px" data-i18n="casos.cta.desc">Contanos tu situación y te decimos qué resultados son realistas para tu rubro.</p>
+      <a href="https://wa.me/5491173655126?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." rel="noopener" data-wa-link class="btn btn--primary btn--lg animate-on-scroll" target="_blank" data-i18n="casos.cta.btn">Escribinos por WhatsApp →</a>
     </div>
   </section>
 
@@ -210,14 +215,15 @@
         <span class="footer__brand-name">Pixel Marketing Studio</span>
       </div>
       <div class="footer__links">
-        <a href="servicios.html">Servicios</a>
-        <a href="casos.html">Casos</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+        <a href="casos.html" data-i18n="nav.cases">Casos</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       </div>
-      <p class="footer__copy">© 2026 Pixel Marketing Studio</p>
+      <p class="footer__copy" data-i18n="footer.rights">© 2026 Pixel Marketing Studio</p>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
